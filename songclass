@@ -1,0 +1,85 @@
+package song;
+
+public class Song {
+	//instance variables
+	private String title;
+	private String artist;
+	private int rating; //5 star rating, 5 is high
+	private double length; //seconds
+	private double cost;
+	private boolean isTop;
+	
+	//constructor: name of constructor is the same as the class
+	public Song() {
+		this(null, null, 0, 0, 0, false);
+		
+	}//zero argument constructor (default)
+	
+	public Song(String title, String artist, int rating,
+				double length, double cost, boolean isTop) {
+		this.title = title;
+		this.artist = artist;
+		this.rating = rating;
+		this.length = length;
+		this.cost = cost;
+		this.isTop = isTop;
+	}// end of 6 var args
+	
+	public Song(String title, String artist) {
+		this(title,artist,0,0,0,false);
+	}
+		
+	public void setCost(double cost) {
+		this.cost = cost;
+	}
+	
+	public void setLength(double length) {
+		this.length = length;
+	}
+	
+	public void setIsTop(boolean isTop) {
+		this.isTop = isTop;
+	}
+	
+	public String getTitle() {
+		return title;
+	}
+	
+	public String getArtist() {
+		return artist;
+	}
+	
+	public int getRating() {
+		return rating;
+	}
+	
+	public double getLength() {
+		return length;
+	}
+	
+	public double getCost() {
+		return cost;
+	}
+	
+	public boolean getTop() {
+		return isTop;
+	}
+	
+	public double minToSec() {
+		return (int)length/60 + (length%60);
+	}
+	
+	public String minToString(){
+		return (int)length/60 + ":" + (int)(length%60);
+	}
+	
+	public String toString() {
+		return "Title: " + title + "\n" + 
+				"Artist: " + artist + "\n" +
+				"Rating: " + rating + " stars" + "\n" +
+				"Length: "+ length + " seconds" + "\n" +
+				"Cost: $" + cost + "\n" + 
+				"Is it in the top 100? " + isTop;
+	}
+
+}
