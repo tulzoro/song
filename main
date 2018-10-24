@@ -4,16 +4,13 @@ public class SongDriver {
 	public static void main(String[] args) {
 		Song s1 = new Song("Three Lemons", "Los Papuchos", 2, 46, 0.25, false);
 		Song s2 = new Song("Random Ambiguous Sounds", "Your Loud Neighbor", 0, 240, 0, false);
-		Song s3 = new Song("WOOF", "Your Neighbor's Dog at 3 AM in the Morning", 0, 100000, -9999.99, false);
+		Song s3 = new Song("WOOF", "Your Neighbor's Dog at 3 AM in the Morning", 0, 100000, -9999.99, true);
 		Song s4 = new Song("Money", "Artist");
-		String[] songs = {s1.toString(), s2.toString(), s3.toString(), s4.toString()};
 		
-		System.out.println(songs[3]);
-		
-		s2.setCost(10);
-		s3.setLength(133);
-		System.out.println(s4.getTitle());
-		System.out.println(s2.minToSec());
+		s3.manStarToName();
+		s2.manStarToName();
+		System.out.println(s3.getTitle());
+		System.out.println(s2.getTitle());
 	}
 	
 	
