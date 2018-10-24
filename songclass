@@ -54,6 +54,7 @@ public class Song {
 	}
 	
 	public double getLength() {
+
 		return length;
 	}
 	
@@ -69,6 +70,28 @@ public class Song {
 		return (int)length/60 + (length%60);
 	}
 	
+	//Precondition: star is in the name or is in top
+	//Postcondition: Title has star or doesnt
+	public void manStarToName() {
+		if(isTop && !title.substring(0,1).equals("*"))
+			title = "*" + title;
+		else if (!isTop && title.substring(0,1).equals("*"))
+			title = title.substring(1);
+	}
+	
+	//Pre: song is top
+	//post: star in title
+	public void addStarToName() {
+		if(isTop)
+			title = "*" + title;
+	}
+	
+	//Pre: song not in top and there is no song
+	//post: star not in title
+	public void removeStarToName() {
+		if (!isTop && title.substring(0,1).equals("*"))
+			title = title.substring(1);
+	}
 	public String minToString(){
 		return (int)length/60 + ":" + (int)(length%60);
 	}
